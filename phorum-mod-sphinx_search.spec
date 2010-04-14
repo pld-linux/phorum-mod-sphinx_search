@@ -8,8 +8,8 @@ Release:	0.1
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	http://www.phorum.org/phorum5/file.php/download/62/3354/sphinx_search_%{version}.tar.gz
+# Source0-md5:	fd6bafce5d77c1baf90bf5f5e157bfb8
 Patch0:		paths.patch
-# Source0-md5:	944211b4f195a538bcb6e2883d2187c5
 URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.268
