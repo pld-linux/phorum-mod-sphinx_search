@@ -4,12 +4,13 @@
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
 Version:	1.0.0
-Release:	0.2
+Release:	0.3
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	http://www.phorum.org/phorum5/file.php/download/62/3354/sphinx_search_%{version}.tar.gz
 # Source0-md5:	fd6bafce5d77c1baf90bf5f5e157bfb8
 Source1:	sph_counter.sql
+Source2:	sphinx.conf
 Patch0:		paths.patch
 Patch1:		errors.patch
 URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
@@ -41,6 +42,7 @@ built-in search.
 %setup -qc
 mv %{module}/* .
 cp -a %{SOURCE1} .
+cp -a %{SOURCE2} .
 %{__sed} -i -e 's,\r$,,' *.php *.txt README Changelog
 %patch0 -p1
 %patch1 -p1
@@ -54,15 +56,14 @@ find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{moduledir}
-cp -a *.txt *.php sph_counter.sql $RPM_BUILD_ROOT%{moduledir}
+cp -a *.txt *.php $RPM_BUILD_ROOT%{moduledir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README Changelog
+%doc README Changelog sphinx.conf sph_counter.sql
 %dir %{moduledir}
 %{moduledir}/*.php
 %{moduledir}/info.txt
-%{moduledir}/sph_counter.sql
