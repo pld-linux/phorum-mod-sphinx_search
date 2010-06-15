@@ -34,28 +34,3 @@
  }
  
  
---- phorum-mod-sphinx_search-1.0.0/sphinx.conf~	2010-04-14 16:38:35.000000000 +0300
-+++ phorum-mod-sphinx_search-1.0.0/sphinx.conf	2010-06-15 00:44:28.003527305 +0300
-@@ -116,7 +116,7 @@
- 			WHERE message_id<=( SELECT max_doc_id FROM sph_counter WHERE counter_id=1 and type = 'author' ) and status=2
- }
- 
--source phorum5_author_delta : phorum5_base
-+source phorum5_author_d : phorum5_base
- {
- 	# main document fetch query
- 	# you can specify any number of fields
-@@ -137,10 +137,10 @@
- }
- 
- 
--index phorum5_author_delta : phorum5_base
-+index phorum5_author_d : phorum5_base
- {
--	source              = phorum5_author_delta
--	path                = /var/lib/sphinx/phorum5/phorum5_author_delta
-+	source              = phorum5_author_d
-+	path                = /var/lib/sphinx/phorum5/phorum5_author_d
- 	charset_type        = utf-8
- }
- 
