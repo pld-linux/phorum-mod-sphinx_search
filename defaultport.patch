@@ -1,0 +1,19 @@
+--- phorum-mod-sphinx_search-1.0.0/settings.php~	2010-06-15 07:21:50.000000000 +0300
++++ phorum-mod-sphinx_search-1.0.0/settings.php	2010-06-15 12:28:58.068470638 +0300
+@@ -35,5 +35,5 @@
+     $frm->addbreak("Hostname and port");
+ 
+     $row = $frm->addrow("What is the hostname of the sphinx daemon? (e.g. 127.0.0.1)$warn", $frm->text_box("hostname", $PHORUM["mod_sphinx_search"]["hostname"], 30));
+-    $row = $frm->addrow("What is the port of the sphinx daemon? (e.g. 3312)$warn", $frm->text_box("port", $PHORUM["mod_sphinx_search"]["port"], 30));
++    $row = $frm->addrow("What is the port of the sphinx daemon? (e.g. 9312)$warn", $frm->text_box("port", $PHORUM["mod_sphinx_search"]["port"], 30));
+     $frm->show();
+--- phorum-mod-sphinx_search-1.0.0/defaults.php~	2010-06-15 07:21:50.000000000 +0300
++++ phorum-mod-sphinx_search-1.0.0/defaults.php	2010-06-15 12:29:20.795338455 +0300
+@@ -8,6 +8,4 @@
+     $GLOBALS["PHORUM"]["mod_sphinx_search"]["hostname"] = "127.0.0.1";
+ 
+ if (! isset($GLOBALS["PHORUM"]["mod_sphinx_search"]["port"]))
+-    $GLOBALS["PHORUM"]["mod_sphinx_search"]["port"] = 3312;
+-
+-?>
++    $GLOBALS["PHORUM"]["mod_sphinx_search"]["port"] = 9312;

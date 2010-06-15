@@ -4,7 +4,7 @@
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
 Version:	1.0.0
-Release:	0.8
+Release:	0.9
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	http://www.phorum.org/phorum5/file.php/download/62/3354/sphinx_search_%{version}.tar.gz
@@ -17,6 +17,7 @@ Patch1:		errors.patch
 Patch2:		index_names.patch
 Patch3:		cleanup-junk.patch
 Patch4:		doc-updates.patch
+Patch5:		defaultport.patch
 URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.553
@@ -55,6 +56,7 @@ cp -a %{SOURCE3} .
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 # php-sphinx
 rm sphinxclient.php
