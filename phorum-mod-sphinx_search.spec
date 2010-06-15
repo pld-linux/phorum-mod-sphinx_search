@@ -11,6 +11,7 @@ Source0:	http://www.phorum.org/phorum5/file.php/download/62/3354/sphinx_search_%
 # Source0-md5:	fd6bafce5d77c1baf90bf5f5e157bfb8
 Source1:	sph_counter.sql
 Source2:	sphinx.conf
+Source3:	crontab
 Patch0:		paths.patch
 Patch1:		errors.patch
 Patch2:		index_names.patch
@@ -47,6 +48,7 @@ built-in search.
 mv %{module}/* .
 cp -a %{SOURCE1} .
 cp -a %{SOURCE2} .
+cp -a %{SOURCE3} .
 %undos *.php *.txt README Changelog
 %patch0 -p1
 %patch1 -p1
@@ -70,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README Changelog sphinx.conf sph_counter.sql
+%doc README Changelog sphinx.conf sph_counter.sql crontab
 %dir %{moduledir}
 %{moduledir}/*.php
 %{moduledir}/info.txt
