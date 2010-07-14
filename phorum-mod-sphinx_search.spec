@@ -19,6 +19,7 @@ Patch3:		cleanup-junk.patch
 Patch4:		doc-updates.patch
 Patch5:		defaultport.patch
 Patch6:		sphinx_api.patch
+Patch7:		forum_id-filter.patch
 URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.553
@@ -59,6 +60,7 @@ cp -a %{SOURCE3} .
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 # php-sphinx
 rm sphinxclient.php
