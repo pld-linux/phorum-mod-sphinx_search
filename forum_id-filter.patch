@@ -1,6 +1,6 @@
---- ./sphinx_search.php	2010-07-14 19:30:16.278208412 +0300
-+++ /usr/share/phorum/mods/sphinx_search/sphinx_search.php	2010-07-14 19:31:49.977588050 +0300
-@@ -66,23 +65,29 @@
+--- phorum-mod-sphinx_search-1.0.0/sphinx_search.php~	2010-07-14 21:59:39.326487097 +0300
++++ phorum-mod-sphinx_search-1.0.0/sphinx_search.php	2010-07-14 21:59:08.536521000 +0300
+@@ -66,23 +66,33 @@
  
      }
  
@@ -26,7 +26,11 @@
 +	// If the user is not allowed to search any forum or the current
 +	// active forum, then return the emtpy search results array.
 +	if (empty($allowed_forums) || ($PHORUM['forum_id']>0 && !in_array($PHORUM['forum_id'], $allowed_forums))) {
-+		return array('count' => 0, 'rows' => array());
++        $arrSearch['results'] = array();
++        $arrSearch['totals'] = 0;
++        $arrSearch['continue'] = 0;
++        $arrSearch['raw_body'] = 1;
++        return $arrSearch;
 +	}
  
 -		$sphinx->SetFilter ( "forum_id", $allowed_forums );
