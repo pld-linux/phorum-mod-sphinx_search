@@ -4,7 +4,7 @@
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
 Version:	1.1
-Release:	1
+Release:	3
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	http://download.github.com/glensc-phorum-%{module}-%{version}-0-g20786ed.tar.gz
@@ -13,9 +13,9 @@ URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.553
 Requires:	phorum >= 5.2
+Requires:	php(pcre)
 Requires:	php(sphinx)
 Requires:	php-date
-Requires:	php-pcre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
