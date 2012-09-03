@@ -4,7 +4,7 @@
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
 Version:	1.1
-Release:	1
+Release:	2
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	http://download.github.com/glensc-phorum-%{module}-%{version}-0-g20786ed.tar.gz
