@@ -1,21 +1,21 @@
-%include	/usr/lib/rpm/macros.php
 %define		php_min_version 5.0.0
 %define		module		sphinx_search
+%include	/usr/lib/rpm/macros.php
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
-Version:	1.1
-Release:	3
+Version:	1.1.1
+Release:	1
 License:	Apache-like
 Group:		Applications/WWW
-Source0:	http://download.github.com/glensc-phorum-%{module}-%{version}-0-g20786ed.tar.gz
-# Source0-md5:	74498f460023d41c1d44ac6fca6518d5
-URL:		http://www.phorum.org/phorum5/read.php?62,136982,138325
+Source0:	https://github.com/glensc/phorum-sphinx_search/tarball/%{version}/%{name}-%{version}.tgz
+# Source0-md5:	72829ff9f49859915ea56ff9cae94100
+URL:		https://github.com/glensc/phorum-sphinx_search
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.553
 Requires:	phorum >= 5.2
+Requires:	php(date)
 Requires:	php(pcre)
 Requires:	php(sphinx)
-Requires:	php-date
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,12 +40,12 @@ built-in search.
 mv *-%{module}-*/* .
 
 # php-sphinx (native) or php-pecl-sphinx (extension)
-rm sphinxapi.php
+%{__rm} sphinxapi.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{moduledir}
-cp -a *.txt *.php $RPM_BUILD_ROOT%{moduledir}
+cp -p *.txt *.php $RPM_BUILD_ROOT%{moduledir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
