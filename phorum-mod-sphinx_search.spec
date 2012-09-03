@@ -8,7 +8,7 @@ Release:	1
 License:	Apache-like
 Group:		Applications/WWW
 Source0:	https://github.com/glensc/phorum-sphinx_search/tarball/%{version}/%{name}-%{version}.tgz
-# Source0-md5:	72829ff9f49859915ea56ff9cae94100
+# Source0-md5:	18ca3bd65e2290489d8610138b1591c5
 URL:		https://github.com/glensc/phorum-sphinx_search
 BuildRequires:	rpm-php-pearprov
 BuildRequires:	rpmbuild(macros) >= 1.553
