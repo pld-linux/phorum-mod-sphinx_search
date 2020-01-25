@@ -1,6 +1,5 @@
 %define		php_min_version 5.0.0
 %define		module		sphinx_search
-%include	/usr/lib/rpm/macros.php
 Summary:	Sphinx Fulltext-Search Module
 Name:		phorum-mod-%{module}
 Version:	1.1.1
